@@ -11,8 +11,9 @@ source:
 
 build:
   skip: true  # [not win]
+  skip: true  # [ python_impl == 'pypy']
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
 requirements:
   host:
