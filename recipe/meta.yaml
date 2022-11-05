@@ -12,10 +12,8 @@ source:
 build:
   skip: true  # [not win]
   skip: true  # [ python_impl == 'pypy']
-  skip: true  # [ py > 310]
-  #Not yet ready for Python 3.11
   script: {{ PYTHON }} -m pip install . -vv
-  number: 6
+  number: 7
 
 requirements:
   host:
