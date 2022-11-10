@@ -22,7 +22,7 @@ requirements:
     - pip
     - python
   run:
-    - py2exe < 0.13
+    - py2exe <0.13
     #Relies on build_exe command line interface which is removed at 0.13.0 
     - python
 
