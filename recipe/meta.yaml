@@ -12,17 +12,18 @@ source:
 build:
   skip: true  # [not win]
   skip: true  # [ python_impl == 'pypy']
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [ py > 310]
   #Not yet ready for Python 3.11
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 6
+  number: 7
 
 requirements:
   host:
     - pip
     - python
   run:
-    - py2exe
+    - py2exe <0.13
+    #Relies on build_exe command line interface which is removed at 0.13.0 
     - python
 
 test:
