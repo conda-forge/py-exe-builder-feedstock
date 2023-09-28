@@ -1,11 +1,11 @@
-About py-exe-builder
-====================
+About py-exe-builder-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py-exe-builder-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/j5int/py-exe-builder
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py-exe-builder-feedstock/blob/main/LICENSE.txt)
 
 Summary: Uses py2exe to create small exe stubs that leverage a full python installation, rather than packing the required pyc files in to the executable.
 
