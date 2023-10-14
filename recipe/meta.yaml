@@ -10,21 +10,20 @@ source:
   sha256: 9bb355b1bf288250028387f778e1d3508917c410b0501ff5dc422e3c1f174059
 
 build:
-  skip: true  # [not win]
-  skip: true  # [ python_impl == 'pypy']
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [ py > 310]
   #Not yet ready for Python 3.11
-  number: 8
+  number: 9
+  noarch: python
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.9,<3.12
   run:
     - py2exe <0.13
     #Relies on build_exe command line interface which is removed at 0.13.0 
-    - python
+    - python >=3.9,<3.12
+    - windows-only-dependency  # [win]
 
 test:
   imports:
