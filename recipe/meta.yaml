@@ -1,18 +1,19 @@
 {% set name = "py-exe-builder" %}
-{% set version = "0.2" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/py-exe-builder-{{ version }}.tar.gz
-  sha256: 9bb355b1bf288250028387f778e1d3508917c410b0501ff5dc422e3c1f174059
-
+  #url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/py-exe-builder-{{ version }}.tar.gz
+  url: https://github.com/j5int/py-exe-builder/archive/v{{ version }}.tar.gz
+  sha256: 9036be013846112130f81cf51e28279944dda7d7c729219d30b8bea380727903
+  
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   #Not yet ready for Python 3.11
-  number: 10
+  number: 0
   noarch: python
 
 requirements:
@@ -21,9 +22,8 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - py2exe <0.13
-    #Relies on build_exe command line interface which is removed at 0.13.0 
-    - python >={{ python_min }},<3.12
+    - py2exe 
+    - python >={{ python_min }}
     - __win   # [win]
 
 test:
